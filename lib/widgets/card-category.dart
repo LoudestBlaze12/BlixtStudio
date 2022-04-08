@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:now_ui_flutter/constants/Theme.dart';
 
+
 class CardCategory extends StatelessWidget {
   CardCategory(
       {this.title = "Placeholder Title",
