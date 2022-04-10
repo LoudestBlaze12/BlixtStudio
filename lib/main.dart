@@ -6,10 +6,13 @@ import 'package:now_ui_flutter/screens/onBoarding.dart';
 import 'package:now_ui_flutter/screens/pro.dart';
 import 'package:now_ui_flutter/screens/home.dart';
 import 'package:now_ui_flutter/screens/profile.dart';
+import 'package:now_ui_flutter/screens/services.dart';
 import 'package:now_ui_flutter/screens/settings.dart';
 import 'package:now_ui_flutter/screens/register.dart';
 import 'package:now_ui_flutter/screens/articles.dart';
 import 'package:now_ui_flutter/screens/components.dart';
+import 'package:now_ui_flutter/screens/inquriry.dart';
+import 'package:now_ui_flutter/screens/getStarted.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Blixt Studios',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(fontFamily: 'Montserrat'),
+        // theme: ThemeData(fontFamily: 'Montserrat'),
         initialRoute: "/onBoarding",
         routes: <String, WidgetBuilder>{
           '/home': (BuildContext context) => new DraftHome(),
@@ -30,6 +33,9 @@ class MyApp extends StatelessWidget {
           "/articles": (BuildContext context) => new Articles(),
           "/components": (BuildContext context) => new Components(),
           "/account": (BuildContext context) => new Register(),
+          "/ask": (BuildContext context) => new Inquiry(),
+          "/start": (BuildContext context) => new Started(),
+          "/services": (BuildContext context) => new Services(),
         });
   }
 }

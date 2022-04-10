@@ -171,17 +171,23 @@ class _IntroState extends State<Intro> {
                     ),
 
                     //Login Button
-                    GFButton(onPressed: (){},
-                      text: "Login",
-                        textStyle: TextStyle(
-                          fontSize: 20,
-                          letterSpacing: 2
-                        ),
-                      size: 65,
-                      fullWidthButton: true,
-                      color: Color.fromRGBO(255, 124, 23, 1),
-                      padding: EdgeInsets.only(top: 0, bottom: 15)
-                    ),
+                    Column(children: [
+                      TextButton(child: Text("I don't have an account", style: TextStyle(color: Color.fromRGBO(255, 255, 255, .5)), textAlign: TextAlign.left,),),
+
+                      GFButton(onPressed: (){
+                        Navigator.pushNamed(context, "/services");
+                      },
+                          text: "Login",
+                          textStyle: TextStyle(
+                              fontSize: 20,
+                              letterSpacing: 2
+                          ),
+                          size: 65,
+                          fullWidthButton: true,
+                          color: Color.fromRGBO(255, 124, 23, 1),
+                          padding: EdgeInsets.only(top: 0, bottom: 15)
+                      ),
+                    ],)
 
 
                   ],
