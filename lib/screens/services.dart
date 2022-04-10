@@ -86,7 +86,16 @@ class _ServicesState extends State<Services> {
       color: Color.fromRGBO(250, 249, 250, 1),
       child: Column(
         children: [
-          SizedBox(height: 75,),
+          SizedBox(height: 50,),
+          GFListTile(
+            avatar: GFAvatar(
+              backgroundImage: NetworkImage('https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?cs=srgb&dl=pexels-creation-hill-1681010.jpg&fm=jpg'),
+            ),
+            titleText: "Good Afternoon",
+            subTitle: Text('Blaze'),
+            icon: Icon(Icons.apps),
+          ),
+          SizedBox(height: 50,),
           Text('How Can We Help?',
           style: TextStyle(
             fontSize: 25
@@ -97,7 +106,7 @@ class _ServicesState extends State<Services> {
           // )
           // ),
           GFCarousel(
-            height: 500,
+            height: 425,
             items: serviceList.map(
                   (currentService) {
                 return GestureDetector(
