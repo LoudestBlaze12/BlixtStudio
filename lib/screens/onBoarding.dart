@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'dart:async';
 
 import 'package:now_ui_flutter/constants/Theme.dart';
@@ -7,7 +8,7 @@ import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:getwidget/getwidget.dart';
-
+import 'package:rive/rive.dart';
 
 
 class Intro extends StatefulWidget {
@@ -23,31 +24,91 @@ class _IntroState extends State<Intro> {
 
     bool _visible = true;
 
-    Timer(Duration(seconds: 15), () {
-      print("Yeah, this line is printed immediately");
-    });
-
-
 
     return Scaffold(
       body: SlidingUpPanel(
-        body: Container(
-          child: Center(
+//         body: Container(
+//           child: Center(
+//             child: AnimatedTextKit(
+//               animatedTexts: [
+//                 TypewriterAnimatedText(
+//                   'Build your project',
+//                   textStyle: const TextStyle(
+//                     color: Colors.white,
+//                     fontSize: 32.0,
+//                     fontWeight: FontWeight.bold,
+//                   ),
+//                   speed: const Duration(milliseconds: 100),
+//                 ),
+//                 TypewriterAnimatedText(
+//                   'Build your dreams',
+//                   textStyle: const TextStyle(
+//                     color: Colors.white,
+//                     fontSize: 32.0,
+//                     fontWeight: FontWeight.bold,
+//                   ),
+//                   speed: const Duration(milliseconds: 100),
+//                 ),
+//                 TypewriterAnimatedText(
+//                   'Build with Blixt',
+//                   textStyle: const TextStyle(
+//                     color: Colors.white,
+//                     fontSize: 32.0,
+//                     fontWeight: FontWeight.bold,
+//                   ),
+//                   speed: const Duration(milliseconds: 200),
+//                 ),
+//
+//               ],
+//
+//               totalRepeatCount: 1,
+//
+//
+//             ),
+//           ),
+//           decoration: BoxDecoration(
+//               image: DecorationImage(
+//                 image: AssetImage("assets/imgs/introBack.png"),
+//                 fit: BoxFit.cover,
+//               )
+//           ),
+// // color: Colors.orange,
+//         ),
+      body: Stack(
+        children: [
+
+          RiveAnimation.asset('assets/imgs/3d_raster_test.riv',
+            fit: BoxFit.cover,
+          ),
+
+
+
+
+
+          Center(child: Padding(
+            padding: EdgeInsets.only(bottom: 200),
             child: AnimatedTextKit(
               animatedTexts: [
                 TypewriterAnimatedText(
-                  'Build your project',
+                  'Dive right in ',
                   textStyle: const TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontSize: 32.0,
                     fontWeight: FontWeight.bold,
+                    // shadows: <Shadow> [
+                    //   Shadow(
+                    //     offset: Offset(3.0, 1.0),
+                    //     blurRadius: 5.0,
+                    //     color: Color.fromARGB(127, 0, 0, 0),
+                    //   ),
+                    // ],
                   ),
-                  speed: const Duration(milliseconds: 100),
+                  speed: const Duration(milliseconds: 75),
                 ),
                 TypewriterAnimatedText(
                   'Build your dreams',
                   textStyle: const TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontSize: 32.0,
                     fontWeight: FontWeight.bold,
                   ),
@@ -56,11 +117,11 @@ class _IntroState extends State<Intro> {
                 TypewriterAnimatedText(
                   'Build with Blixt',
                   textStyle: const TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontSize: 32.0,
                     fontWeight: FontWeight.bold,
                   ),
-                  speed: const Duration(milliseconds: 200),
+                  speed: const Duration(milliseconds: 100),
                 ),
 
               ],
@@ -69,15 +130,9 @@ class _IntroState extends State<Intro> {
 
 
             ),
-          ),
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/imgs/introBack.png"),
-                fit: BoxFit.cover,
-              )
-          ),
-// color: Colors.orange,
-        ),
+          ),)
+        ],
+      ),
         maxHeight: 700.0,
         minHeight: 50.0,
 
@@ -103,7 +158,7 @@ class _IntroState extends State<Intro> {
                 height: 675,
                 //panel Background
                 decoration: BoxDecoration(
-                  color: Colors.black.withAlpha(200),
+                  color: Colors.black.withAlpha(235),
                   borderRadius: BorderRadius.only(topRight: Radius.circular(40.0), topLeft: Radius.circular(40.0)),
                 ),
 
@@ -151,10 +206,15 @@ class _IntroState extends State<Intro> {
                         SizedBox(height: 50,),
 
                         //Password field Section
-                        Text("YOUR PASSWORD", style: TextStyle(color: Colors.white), textAlign: TextAlign.left,),
+                        Text("YOUR PASSWORD",
+                          style: TextStyle(color: Colors.white),
+                          textAlign: TextAlign.left,),
                         SizedBox(height: 10,),
-                        TextField(style: TextStyle(
+                        TextField(
+                          obscureText: true,
+                          style: TextStyle(
                           color: Colors.white,
+
 
                         ),
                           decoration: InputDecoration(
@@ -185,10 +245,9 @@ class _IntroState extends State<Intro> {
                           size: 65,
                           fullWidthButton: true,
                           color: Color.fromRGBO(255, 124, 23, 1),
-                          padding: EdgeInsets.only(top: 0, bottom: 15)
+                          padding: EdgeInsets.symmetric(vertical: 10),
                       ),
                     ],)
-
 
                   ],
                 )
@@ -216,13 +275,6 @@ class _IntroState extends State<Intro> {
     );
   }
 }
-
-// BackdropFilter(
-// filter: ImageFilter.blur(sigmaX: 10, sigmaY: 0),
-// child: Container(
-// color: Colors.black.withOpacity(.2),
-// ),
-// ),
 
 
 

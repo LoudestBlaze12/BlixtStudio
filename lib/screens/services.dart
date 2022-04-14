@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:now_ui_flutter/widgets/listView.dart';
+import 'package:rive/rive.dart';
 
 
 class Services extends StatefulWidget {
@@ -71,7 +72,9 @@ class _ServicesState extends State<Services> {
     Service(name:"App Development", description: "Hello Free world", url: "https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?cs=srgb&dl=pexels-pixabay-270408.jpg&fm=jpg"),
     Service(name:"Photography", description: "Hello Free world", url: "https://images.pexels.com/photos/598917/pexels-photo-598917.jpeg?cs=srgb&dl=pexels-kaique-rocha-598917.jpg&fm=jpg"),
     Service(name:"Videography", description: "Hello Free world", url:  "https://images.pexels.com/photos/403495/pexels-photo-403495.jpeg?cs=srgb&dl=pexels-md-iftekhar-uddin-emon-403495.jpg&fm=jpg"),
-    Service(name:"Marketing", description: "Hello Free world", url: "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?cs=srgb&dl=pexels-lukas-590016.jpg&fm=jpg"),
+    Service(name:"Marketing", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tincidunt tortor aliquam nulla facilisi cras fermentum odio eu. "
+        "Nunc aliquet bibendum enim facilisis gravida neque convallis a cras. Vitae ultricies leo integer malesuada nunc vel. Pellentesque adipiscing commodo elit at. Suspendisse in est ante in nibh mauris. Fermentum posuere urna nec tincidunt "
+        " pulvinar sapien et ligula. Accumsan sit amet nulla facilisi morbi tempus iaculis urna id.", url: "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?cs=srgb&dl=pexels-lukas-590016.jpg&fm=jpg"),
 
   ];
 
@@ -95,23 +98,24 @@ class _ServicesState extends State<Services> {
             subTitle: Text('Blaze'),
             icon: Icon(Icons.apps),
           ),
-          SizedBox(height: 50,),
+          SizedBox(height: 40,),
           Text('How Can We Help?',
           style: TextStyle(
             fontSize: 25
           ),),
-          SizedBox(height: 40,),
+          SizedBox(height: 25,),
           // ListViewHome()
           // Expanded(child: ListViewer(
           // )
           // ),
           GFCarousel(
-            height: 425,
+            height: 550,
             items: serviceList.map(
                   (currentService) {
                 return GestureDetector(
                   onTap: (){
                     print('Ol Happy day with ${currentService.name}');
+                    Navigator.pop(context);
                   },
                   child: Column(
                     children: [
@@ -128,6 +132,13 @@ class _ServicesState extends State<Services> {
                         height: 300,
                       ),
                       Text(currentService.name),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(currentService.description,
+                      style: TextStyle(
+                        fontSize: 12,
+                      ),)
                     ],
                   )
                 );
@@ -154,30 +165,37 @@ class Service {
   String name;
   String description;
   String url;
+
 }
 
-
-class ListViewHome extends StatelessWidget {
-  final titles = ["List 1", "List 2", "List 3"];
-  final subtitles = [
-    "Here is list 1 subtitle",
-    "Here is list 2 subtitle",
-    "Here is list 3 subtitle"
-  ];
-  final icons = [Icons.ac_unit, Icons.access_alarm, Icons.access_time];
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-        itemCount: titles.length,
-        itemBuilder: (context, index) {
-          return Card(
-              child: ListTile(
-                  title: Text(titles[index]),
-                  subtitle: Text(subtitles[index]),
-                  leading: CircleAvatar(
-                      backgroundImage: NetworkImage(
-                          "https://images.unsplash.com/photo-1547721064-da6cfb341d50")),
-                  trailing: Icon(icons[index])));
-        });
-  }
-}
+//
+// class ListViewHome extends StatelessWidget {
+//
+//
+//   final titles = ["List 1", "List 2", "List 3"];
+//
+//
+//   final subtitles = [
+//     "Here is list 1 subtitle",
+//     "Here is list 2 subtitle",
+//     "Here is list 3 subtitle"
+//   ];
+//   final icons = [Icons.ac_unit, Icons.access_alarm, Icons.access_time];
+//   @override
+//   Widget build(BuildContext context) {
+//
+//     //Header Section Code
+//     return ListView.builder(
+//         itemCount: titles.length,
+//         itemBuilder: (context, index) {
+//           return Card(
+//               child: ListTile(
+//                   title: Text(titles[index]),
+//                   subtitle: Text(subtitles[index]),
+//                   leading: CircleAvatar(
+//                       backgroundImage: NetworkImage(
+//                           "https://images.unsplash.com/photo-1547721064-da6cfb341d50")),
+//                   trailing: Icon(icons[index])));
+//         });
+//   }
+// }
