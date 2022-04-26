@@ -14,6 +14,7 @@ import 'package:now_ui_flutter/screens/components.dart';
 import 'package:now_ui_flutter/screens/inquriry.dart';
 import 'package:now_ui_flutter/screens/getStarted.dart';
 import 'package:now_ui_flutter/screens/mainScreen.dart';
+import 'package:now_ui_flutter/screens/mainScreenVideo.dart';
 
 void main() => runApp(MyApp());
 
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         title: 'Blixt Studios',
         debugShowCheckedModeBanner: false,
         // theme: ThemeData(fontFamily: 'Montserrat'),
-        initialRoute: "/home",
+        initialRoute: "/video",
         routes: <String, WidgetBuilder>{
           '/draft': (BuildContext context) => new DraftHome(),
           '/settings': (BuildContext context) => new Settings(),
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
           "/ask": (BuildContext context) => new Inquiry(),
           "/start": (BuildContext context) => new Started(),
           "/services": (BuildContext context) => new Services(),
+          "/video": (BuildContext context) => new MainVideoScreen(),
         });
   }
 }

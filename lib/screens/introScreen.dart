@@ -245,7 +245,7 @@ class _IntroState extends State<Intro> {
                           size: 65,
                           fullWidthButton: true,
                           color: Color.fromRGBO(255, 124, 23, 1),
-                          padding: EdgeInsets.only(bottom: 15),
+                          // padding: EdgeInsets.symmetric(vertical: 10),
                       ),
                     ],)
 
