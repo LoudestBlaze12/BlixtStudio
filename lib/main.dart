@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:now_ui_flutter/screens/draftHome.dart';
 
 // screens
-import 'package:now_ui_flutter/screens/onBoarding.dart';
+import 'package:now_ui_flutter/screens/introScreen.dart';
 import 'package:now_ui_flutter/screens/pro.dart';
 import 'package:now_ui_flutter/screens/home.dart';
 import 'package:now_ui_flutter/screens/profile.dart';
@@ -24,12 +24,12 @@ class MyApp extends StatelessWidget {
         title: 'Blixt Studios',
         debugShowCheckedModeBanner: false,
         // theme: ThemeData(fontFamily: 'Montserrat'),
-        initialRoute: "/main",
+        initialRoute: "/home",
         routes: <String, WidgetBuilder>{
           '/draft': (BuildContext context) => new DraftHome(),
           '/settings': (BuildContext context) => new Settings(),
-          "/home": (BuildContext context) => new Intro(),
-          "/main": (BuildContext context) => new MainScreen(),
+          "/intro": (BuildContext context) => new Intro(),
+          "/home": (BuildContext context) => new MainScreen(),
           "/pro": (BuildContext context) => new Pro(),
           "/profile": (BuildContext context) => new Profile(),
           "/articles": (BuildContext context) => new Articles(),
