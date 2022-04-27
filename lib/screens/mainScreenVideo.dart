@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
@@ -26,7 +28,7 @@ class MainVideoScreen extends StatelessWidget {
 
  // Color primaryColor = Color.fromARGB(255, 255, 124, 23);
  Color primaryColor = Colors.white;
-
+  double containerHeight = 160.0;
 
   @override
   Widget build(BuildContext context) {
@@ -106,67 +108,63 @@ class MainVideoScreen extends StatelessWidget {
                     onTap: (){
                       print("We want Photography Services, get me right");
                     },
-                    child: Stack(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.3),
-                                spreadRadius: 5,
-                                blurRadius: 7,
-                                offset: Offset(0, 8), // changes position of shadow
-                              ),
-                            ],
+                    child: Container(
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.2),
+                            spreadRadius: 5,
+                            blurRadius: 8,
+                            offset: Offset(0, 4), // changes position of shadow
                           ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.all(Radius.circular(10.0)),
-
-                            child: Container(
-                              width: MediaQuery.of(context).size.width / 3,
-
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Padding(padding: EdgeInsets.only(top: 12),child: Text('Photography',
-                                    style: GoogleFonts.inter(
-                                      fontWeight: FontWeight.w800,
-                                      fontSize: 14,
-                                      color: Colors.white,
-                                    ),
-                                  ),),
-                                  Padding(padding: EdgeInsets.only(right: 8, bottom: 8), child: Row(mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      Stack(
-                                        alignment: Alignment.center,
-                                        children: [
-
-                                          ImageIcon(
-                                            AssetImage("assets/imgs/Round ButtonRight.png",),
-                                            color: Colors.white,
-                                            size: 19,
-                                          ),
-
-                                          ImageIcon(AssetImage("assets/imgs/Round ButtonShape.png"),
-                                          color: Color.fromARGB(255, 0, 255, 191),),
-
-                                        ],
-                                      )
-
-                                    ],
-                                  ),
-                                  )
-                                ],
-                              ),
+                        ],
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        child: Container(
+                          width: MediaQuery.of(context).size.width / 3,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage("assets/imgs/PhotoBack.jpg"),
+                              fit: BoxFit.cover,
                             ),
                           ),
-                          height: 180,
-                        ).asGlass(tintColor: Colors.white,
-                        clipBorderRadius: BorderRadius.all(Radius.circular(10.0),
-                        ),
-                        ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(padding: EdgeInsets.only(top: 12),child: Text('Photography',
+                                style: GoogleFonts.inter(
+                                  fontWeight: FontWeight.w800,
+                                  fontSize: 14,
+                                  color: Colors.white,
+                                ),
+                              ),),
+                              Padding(padding: EdgeInsets.only(right: 8, bottom: 8), child: Row(mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Stack(
+                                    alignment: Alignment.center,
+                                    children: [
 
-                      ],
+                                      ImageIcon(
+                                        AssetImage("assets/imgs/Round ButtonRight.png",),
+                                        color: Colors.white,
+                                        size: 19,
+                                      ),
+
+                                      ImageIcon(AssetImage("assets/imgs/Round ButtonShape.png"),
+                                        color: Color.fromARGB(255, 0, 255, 191),),
+
+                                    ],
+                                  )
+
+                                ],
+                              ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      height: containerHeight,
                     ),
                   ),),
 
@@ -176,71 +174,83 @@ class MainVideoScreen extends StatelessWidget {
                       onTap: (){
                         print("We want Videography Services, get me right");
                       },
-                      child: Stack(
-                        children: [
-                          Container(
-                            // margin: EdgeInsets.only(left: 36, right: 10),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.3),
+                              spreadRadius: 5,
+                              blurRadius: 10,
+                              offset: Offset(4, 4), // changes position of shadow
+                            ),
+                          ],
+                        ),
 
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
 
-                              child: Container(
-                                width: MediaQuery.of(context).size.width / 3,
-                                decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  image: DecorationImage(
-                                    image: AssetImage("assets/imgs/Video.png"),
-                                    fit: BoxFit.cover,
-                                  ),
+                          child: Container(
+                            width: MediaQuery.of(context).size.width / 3,
+                            decoration: BoxDecoration(
+                              color: Colors.black,
+                              image: DecorationImage(
+                                image: AssetImage("assets/imgs/Video.png"),
+                                fit: BoxFit.cover,
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.3),
+                                  spreadRadius: 5,
+                                  blurRadius: 10,
+                                  offset: Offset(4, 4), // changes position of shadow
                                 ),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              ],
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Padding(padding: EdgeInsets.only(top: 12),child: Text('Videography',
+                                  style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 14,
+                                    color: Colors.white,
+                                  ),
+                                ),),
+                                Padding(padding: EdgeInsets.only(right: 8, bottom: 8), child: Row(mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
-                                    Padding(padding: EdgeInsets.only(top: 12),child: Text('Videography',
-                                      style: GoogleFonts.inter(
-                                        fontWeight: FontWeight.w800,
-                                        fontSize: 14,
-                                        color: Colors.white,
-                                      ),
-                                    ),),
-                                    Padding(padding: EdgeInsets.only(right: 8, bottom: 8), child: Row(mainAxisAlignment: MainAxisAlignment.end,
+                                    Stack(
+                                      alignment: Alignment.center,
                                       children: [
-                                        Stack(
-                                          alignment: Alignment.center,
-                                          children: [
-                                            // ClipRRect(
-                                            //   borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                            //   child: Container(color: Colors.white,
-                                            //     width: 20,
-                                            //     height: 20,
-                                            //   ),
-                                            // ),
-                                            ImageIcon(
-                                              AssetImage("assets/imgs/Round ButtonRight.png",),
-                                              color: Colors.white,
-                                              size: 19,
-                                            ),
+                                        // ClipRRect(
+                                        //   borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                        //   child: Container(color: Colors.white,
+                                        //     width: 20,
+                                        //     height: 20,
+                                        //   ),
+                                        // ),
+                                        ImageIcon(
+                                          AssetImage("assets/imgs/Round ButtonRight.png",),
+                                          color: Colors.white,
+                                          size: 19,
+                                        ),
 
-                                            ImageIcon(AssetImage("assets/imgs/Round ButtonShape.png"),
-                                              color: Color.fromARGB(255, 0, 255, 191),),
+                                        ImageIcon(AssetImage("assets/imgs/Round ButtonShape.png"),
+                                          color: Color.fromARGB(255, 0, 255, 191),),
 
-                                            // Icon(FontAwesomeIcons.chevronCircleRight,
-                                            //   color: Color.fromARGB(255, 0, 255, 191),),
-
-                                          ],
-                                        )
+                                        // Icon(FontAwesomeIcons.chevronCircleRight,
+                                        //   color: Color.fromARGB(255, 0, 255, 191),),
 
                                       ],
-                                    ),
                                     )
+
                                   ],
                                 ),
-                              ),
+                                )
+                              ],
                             ),
-                            height: 180,
                           ),
-
-                        ],
+                        ),
+                        height: containerHeight,
                       ),
                     ),),
 
@@ -284,13 +294,7 @@ class MainVideoScreen extends StatelessWidget {
                                         Stack(
                                           alignment: Alignment.center,
                                           children: [
-                                            // ClipRRect(
-                                            //   borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                            //   child: Container(color: Colors.white,
-                                            //     width: 20,
-                                            //     height: 20,
-                                            //   ),
-                                            // ),
+
                                             ImageIcon(
                                               AssetImage("assets/imgs/Round ButtonRight.png",),
                                               color: Colors.white,
@@ -313,7 +317,7 @@ class MainVideoScreen extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            height: 180,
+                            height: containerHeight,
                           ),
 
                         ],
@@ -373,8 +377,6 @@ class MainVideoScreen extends StatelessWidget {
                                             ImageIcon(AssetImage("assets/imgs/Round ButtonShape.png"),
                                               color: Color.fromARGB(255, 0, 255, 191),),
 
-                                            // Icon(FontAwesomeIcons.chevronCircleRight,
-                                            //   color: Color.fromARGB(255, 0, 255, 191),),
 
                                           ],
                                         )
@@ -386,7 +388,7 @@ class MainVideoScreen extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            height: 180,
+                            height: containerHeight,
                           ),
 
                         ],
@@ -405,10 +407,6 @@ class MainVideoScreen extends StatelessWidget {
                             // margin: EdgeInsets.only(left: 36, right: 10),
                             child: ClipRRect(
                               borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                              // child: Image.network("https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?cs=srgb&dl=pexels-pixabay-270408.jpg&fm=jpg",
-                              //     fit: BoxFit.cover,
-                              //     width: MediaQuery.of(context).size.width / 3
-                              // ),
 
                               child: Container(
                                 width: MediaQuery.of(context).size.width / 3,
@@ -433,13 +431,7 @@ class MainVideoScreen extends StatelessWidget {
                                         Stack(
                                           alignment: Alignment.center,
                                           children: [
-                                            // ClipRRect(
-                                            //   borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                            //   child: Container(color: Colors.white,
-                                            //     width: 20,
-                                            //     height: 20,
-                                            //   ),
-                                            // ),
+
                                             ImageIcon(
                                               AssetImage("assets/imgs/Round ButtonRight.png",),
                                               color: Colors.white,
@@ -449,8 +441,6 @@ class MainVideoScreen extends StatelessWidget {
                                             ImageIcon(AssetImage("assets/imgs/Round ButtonShape.png"),
                                               color: Color.fromARGB(255, 0, 255, 191),),
 
-                                            // Icon(FontAwesomeIcons.chevronCircleRight,
-                                            //   color: Color.fromARGB(255, 0, 255, 191),),
 
                                           ],
                                         )
@@ -462,7 +452,7 @@ class MainVideoScreen extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            height: 180,
+                            height: containerHeight,
                           ),
 
                         ],
@@ -599,7 +589,7 @@ class MainVideoScreen extends StatelessWidget {
             ),
 
             Container(
-              color: Color.fromARGB(15, 0, 0, 0),
+              color: Color.fromARGB(50, 0, 0, 0),
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,).asGlass(
               tintColor: Colors.black,
@@ -616,14 +606,13 @@ class MainVideoScreen extends StatelessWidget {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Padding(padding: EdgeInsets.symmetric(vertical: 16),
+                      Padding(padding: EdgeInsets.only(top: 16, bottom: 4),
                         child: Image.asset('assets/imgs/logo.png',
                           width: 120,
                         ),
                       ),
                       Text(''),
 
-                      // Expanded(child: ListView(children: customList,))
 
                       Expanded(child: ListView(children: customList,
                       ),)
