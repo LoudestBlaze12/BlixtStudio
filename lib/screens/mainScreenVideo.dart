@@ -24,7 +24,8 @@ class Service {
 
 class MainVideoScreen extends StatelessWidget {
 
-
+ // Color primaryColor = Color.fromARGB(255, 255, 124, 23);
+ Color primaryColor = Colors.white;
 
 
   @override
@@ -88,7 +89,7 @@ class MainVideoScreen extends StatelessWidget {
                   style: GoogleFonts.inter(
                       fontWeight: FontWeight.w700,
                       fontSize: 28,
-                      color: Color.fromARGB(255, 255, 124, 23)
+                      color: primaryColor,
                   ),)
               ],
             ),),
@@ -108,22 +109,22 @@ class MainVideoScreen extends StatelessWidget {
                     child: Stack(
                       children: [
                         Container(
-                          // margin: EdgeInsets.only(left: 36, right: 10),
+                          decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.3),
+                                spreadRadius: 5,
+                                blurRadius: 7,
+                                offset: Offset(0, 8), // changes position of shadow
+                              ),
+                            ],
+                          ),
                           child: ClipRRect(
                             borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                            // child: Image.network("https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?cs=srgb&dl=pexels-pixabay-270408.jpg&fm=jpg",
-                            //     fit: BoxFit.cover,
-                            //     width: MediaQuery.of(context).size.width / 3
-                            // ),
 
                             child: Container(
                               width: MediaQuery.of(context).size.width / 3,
-                              // decoration: BoxDecoration(
-                              //   image: DecorationImage(
-                              //     image: AssetImage("assets/imgs/PhotoBack.jpg"),
-                              //     fit: BoxFit.cover,
-                              //   ),
-                              // ),
+
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
@@ -139,13 +140,7 @@ class MainVideoScreen extends StatelessWidget {
                                       Stack(
                                         alignment: Alignment.center,
                                         children: [
-                                          // ClipRRect(
-                                          //   borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                          //   child: Container(color: Colors.white,
-                                          //     width: 20,
-                                          //     height: 20,
-                                          //   ),
-                                          // ),
+
                                           ImageIcon(
                                             AssetImage("assets/imgs/Round ButtonRight.png",),
                                             color: Colors.white,
@@ -154,9 +149,6 @@ class MainVideoScreen extends StatelessWidget {
 
                                           ImageIcon(AssetImage("assets/imgs/Round ButtonShape.png"),
                                           color: Color.fromARGB(255, 0, 255, 191),),
-
-                                          // Icon(FontAwesomeIcons.chevronCircleRight,
-                                          //   color: Color.fromARGB(255, 0, 255, 191),),
 
                                         ],
                                       )
@@ -170,7 +162,9 @@ class MainVideoScreen extends StatelessWidget {
                           ),
                           height: 180,
                         ).asGlass(tintColor: Colors.white,
-                        clipBorderRadius: BorderRadius.all(Radius.circular(10.0))),
+                        clipBorderRadius: BorderRadius.all(Radius.circular(10.0),
+                        ),
+                        ),
 
                       ],
                     ),
@@ -504,7 +498,7 @@ class MainVideoScreen extends StatelessWidget {
                   style: GoogleFonts.inter(
                       fontWeight: FontWeight.w700,
                       fontSize: 28,
-                      color: Color.fromARGB(255, 255, 124, 23)
+                      color: primaryColor,
                   ),)
               ],
             ),
@@ -552,7 +546,7 @@ class MainVideoScreen extends StatelessWidget {
                   style: GoogleFonts.inter(
                       fontWeight: FontWeight.w700,
                       fontSize: 28,
-                      color: Color.fromARGB(255, 255, 124, 23)
+                      color: primaryColor,
                   ),)
               ],
             ),
@@ -605,10 +599,10 @@ class MainVideoScreen extends StatelessWidget {
             ),
 
             Container(
-              // color: Color.fromARGB(155, 0, 0, 0),
+              color: Color.fromARGB(15, 0, 0, 0),
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,).asGlass(
-              tintColor: Colors.black26,
+              tintColor: Colors.black,
               blurX: 5,
               blurY: 5
             ),

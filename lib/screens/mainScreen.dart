@@ -8,19 +8,12 @@ import 'package:now_ui_flutter/screens/video_Widget.dart';
 
 
 
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:getwidget/components/avatar/gf_avatar.dart';
-import 'package:getwidget/components/list_tile/gf_list_tile.dart';
+
 
 import 'package:now_ui_flutter/constants/Theme.dart';
 
-import 'package:now_ui_flutter/widgets/drawer.dart';
-import 'package:now_ui_flutter/widgets/navbar.dart';
-import 'package:now_ui_flutter/widgets/card-horizontal.dart';
-import 'package:now_ui_flutter/widgets/card-small.dart';
-import 'package:now_ui_flutter/widgets/card-square.dart';
-import 'package:now_ui_flutter/widgets/card-category.dart';
-import 'package:now_ui_flutter/widgets/slider-product.dart';
+
 
 
 class Service {
@@ -139,13 +132,20 @@ class MainScreen extends StatelessWidget {
                     child: Stack(
                       children: [
                         Container(
+                          decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.5),
+                                spreadRadius: 5,
+                                blurRadius: 7,
+                                offset: Offset(0, 3), // changes position of shadow
+                              ),
+                            ],
+                          ),
                           // margin: EdgeInsets.only(left: 36, right: 10),
                           child: ClipRRect(
                             borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                            // child: Image.network("https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?cs=srgb&dl=pexels-pixabay-270408.jpg&fm=jpg",
-                            //     fit: BoxFit.cover,
-                            //     width: MediaQuery.of(context).size.width / 3
-                            // ),
+
 
                             child: Container(
                               width: MediaQuery.of(context).size.width / 3,
@@ -170,13 +170,6 @@ class MainScreen extends StatelessWidget {
                                       Stack(
                                         alignment: Alignment.center,
                                         children: [
-                                          // ClipRRect(
-                                          //   borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                          //   child: Container(color: Colors.white,
-                                          //     width: 20,
-                                          //     height: 20,
-                                          //   ),
-                                          // ),
                                           ImageIcon(
                                             AssetImage("assets/imgs/Round ButtonRight.png",),
                                             color: Colors.white,
@@ -185,9 +178,6 @@ class MainScreen extends StatelessWidget {
 
                                           ImageIcon(AssetImage("assets/imgs/Round ButtonShape.png"),
                                           color: Color.fromARGB(255, 0, 255, 191),),
-
-                                          // Icon(FontAwesomeIcons.chevronCircleRight,
-                                          //   color: Color.fromARGB(255, 0, 255, 191),),
 
                                         ],
                                       )
@@ -215,6 +205,8 @@ class MainScreen extends StatelessWidget {
                       child: Stack(
                         children: [
                           Container(
+                            decoration: BoxDecoration(
+                            ),
                             // margin: EdgeInsets.only(left: 36, right: 10),
                             child: ClipRRect(
                               borderRadius: BorderRadius.all(Radius.circular(10.0)),
@@ -508,45 +500,7 @@ class MainScreen extends StatelessWidget {
                 ],
               ),
             ),
-            // GFCarousel(
-            //   enableInfiniteScroll: true,
-            //   viewportFraction: 0.4,
-            //   height: 250,
-            //   items: serviceList.map(
-            //         (currentService) {
-            //       return GestureDetector(
-            //           onTap: (){
-            //             print('Ol Happy day with ${currentService.name}');
-            //             Navigator.pop(context);
-            //           },
-            //           child: Column(
-            //
-            //             children: [
-            //               Container(
-            //                 margin: currentService.padding,
-            //                 child: ClipRRect(
-            //                   borderRadius: BorderRadius.all(Radius.circular(5.0)),
-            //                   child: Image.network(
-            //                       currentService.url,
-            //                       fit: BoxFit.cover,
-            //                       width: 1000.0
-            //                   ),
-            //                 ),
-            //                 height: 230,
-            //               ),
-            //
-            //             ],
-            //           )
-            //       );
-            //     },
-            //   ).toList(),
-            //   // onPageChanged: (index) {
-            //   //   setState(() {
-            //   //     index;
-            //   //
-            //   //   });
-            //   // },
-            // ),
+
           ],
         ),
       ),
@@ -578,63 +532,22 @@ class MainScreen extends StatelessWidget {
             SizedBox(height: 8,),
             GestureDetector(child: ClipRRect(
               borderRadius: BorderRadius.all(Radius.circular(10.0)),
-              // child: Image.network("https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?cs=srgb&dl=pexels-pixabay-270408.jpg&fm=jpg",
-              //     fit: BoxFit.cover,
-              //     width: MediaQuery.of(context).size.width / 3
-              // ),
+
 
               child: Container(
                 height: 175,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("assets/imgs/ClientPortal.png"),
-                    fit: BoxFit.cover,
-                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: Offset(0, 3), // changes position of shadow
+                    ),
+                  ],
                 ),
-                // child: Column(
-                //   mainAxisAlignment: MainAxisAlignment.end,
-                //   children: [
-                //     // Padding(padding: EdgeInsets.only(top: 12),child: Text('Photography',
-                //     //   style: GoogleFonts.inter(
-                //     //     fontWeight: FontWeight.w800,
-                //     //     fontSize: 14,
-                //     //     color: Colors.white,
-                //     //   ),
-                //     // ),),
-                //
-                //     // Padding(padding: EdgeInsets.only(right: 8, bottom: 8), child: Row(mainAxisAlignment: MainAxisAlignment.end,
-                //     //   children: [
-                //     //     Stack(
-                //     //       alignment: Alignment.center,
-                //     //       children: [
-                //     //         // ClipRRect(
-                //     //         //   borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                //     //         //   child: Container(color: Colors.white,
-                //     //         //     width: 20,
-                //     //         //     height: 20,
-                //     //         //   ),
-                //     //         // ),
-                //     //         ImageIcon(
-                //     //           AssetImage("assets/imgs/Round ButtonRight.png",),
-                //     //           color: Colors.white,
-                //     //           size: 19,
-                //     //         ),
-                //     //
-                //     //         ImageIcon(AssetImage("assets/imgs/Round ButtonShape.png"),
-                //     //           color: Color.fromARGB(255, 0, 255, 191),),
-                //     //
-                //     //         // Icon(FontAwesomeIcons.chevronCircleRight,
-                //     //         //   color: Color.fromARGB(255, 0, 255, 191),),
-                //     //
-                //     //       ],
-                //     //     )
-                //     //
-                //     //   ],
-                //     // ),
-                //     // )
-                //   ],
-                // ),
+
               ),
             ),
             onTap: (){
