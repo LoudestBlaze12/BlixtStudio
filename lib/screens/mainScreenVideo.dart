@@ -8,6 +8,8 @@ import 'package:now_ui_flutter/screens/video_Widget.dart';
 import 'package:getwidget/components/avatar/gf_avatar.dart';
 import 'package:glass/glass.dart';
 import 'package:now_ui_flutter/constants/Theme.dart';
+import 'package:sizer/sizer.dart';
+
 
 
 
@@ -27,11 +29,14 @@ class Service {
 class MainVideoScreen extends StatelessWidget {
 
  // Color primaryColor = Color.fromARGB(255, 255, 124, 23);
- Color primaryColor = Colors.white;
-  double containerHeight = 160.0;
+  Color primaryColor = Colors.white;
+  double containerHeight = 20.h;
+
 
   @override
   Widget build(BuildContext context) {
+
+    var containerSize = MediaQuery.of(context).size.width / 3;
 
     //This is a list that generates all the content below the logo
     List<Widget> customList = [
@@ -68,7 +73,7 @@ class MainVideoScreen extends StatelessWidget {
         ),
       ),
 
-      SizedBox(height: 28,),
+      SizedBox(height: 2.h,),
 
       //Explore Services Section Horizontal Section
       Container(
@@ -82,20 +87,19 @@ class MainVideoScreen extends StatelessWidget {
                 Text('Explore',
                 style: GoogleFonts.inter(
                   fontWeight: FontWeight.w400,
-                  fontSize: 28,
+                  fontSize: 24.sp,
                   color: Colors.white,
                 ),
                 ),
-                SizedBox(width: 5,),
+                SizedBox(width: 2.w,),
                 Text('Services',
                   style: GoogleFonts.inter(
                       fontWeight: FontWeight.w700,
-                      fontSize: 28,
+                      fontSize: 24.sp,
                       color: primaryColor,
                   ),)
               ],
             ),),
-
             SizedBox(height: 12,),
             //Horizontal Scroll Of Services
             SingleChildScrollView(
@@ -614,7 +618,7 @@ class MainVideoScreen extends StatelessWidget {
                       Text(''),
 
 
-                      Expanded(child: ListView(children: customList,
+                      Expanded(child: Column(children: customList,
                       ),)
 
                     ],
