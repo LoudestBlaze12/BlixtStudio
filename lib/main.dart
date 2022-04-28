@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
               title: 'Blixt Studios',
               debugShowCheckedModeBanner: false,
 // theme: ThemeData(fontFamily: 'Montserrat'),
-              initialRoute: "/video",
+              initialRoute: "/intro",
               routes: <String, WidgetBuilder>{
                 '/draft': (BuildContext context) => new DraftHome(),
                 '/settings': (BuildContext context) => new Settings(),

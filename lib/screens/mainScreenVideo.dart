@@ -2,6 +2,7 @@ import 'dart:ffi';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:now_ui_flutter/screens/video_Widget.dart';
@@ -31,7 +32,8 @@ class MainVideoScreen extends StatelessWidget {
  // Color primaryColor = Color.fromARGB(255, 255, 124, 23);
   Color primaryColor = Colors.white;
   double containerHeight = 20.h;
-
+  double fullContainerHeight = 25.h;
+  Color arrowButton = Color.fromARGB(255, 255, 124, 23);
 
   @override
   Widget build(BuildContext context) {
@@ -50,22 +52,24 @@ class MainVideoScreen extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Good Afternoon',
+                Text('Good Morning,',
                   style: GoogleFonts.inter(
                       fontWeight: FontWeight.w600,
+                    fontSize: 10.sp,
                     color: Colors.white,
                   ),
                 ),
-                Text('John W.',
+                SizedBox(height: 0.5.h,),
+                Text('Samantha J.',
                   style: GoogleFonts.inter(
                     fontWeight: FontWeight.w700,
-                    fontSize: 32,
+                    fontSize: 22.sp,
                     color: Colors.white,
                   ),),
               ],
             ),
             GFAvatar(
-              size: GFSize.LARGE,
+              size: 5.h,
               backgroundImage:NetworkImage("https://images.unsplash.com/photo-1650765815206-2884e7d"
                   "31cab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"),
             ),
@@ -73,7 +77,7 @@ class MainVideoScreen extends StatelessWidget {
         ),
       ),
 
-      SizedBox(height: 2.h,),
+      SizedBox(height: 4.h,),
 
       //Explore Services Section Horizontal Section
       Container(
@@ -81,26 +85,34 @@ class MainVideoScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //Section Title
-            Padding(padding: EdgeInsets.only(left: 18),
+            Padding(padding: EdgeInsets.only(left: 18, right: 18),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text('Explore',
+                Text('Our',
                 style: GoogleFonts.inter(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 24.sp,
+                  // fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.w200,
+                  fontSize: 18.sp,
                   color: Colors.white,
                 ),
+
+
+
+
                 ),
-                SizedBox(width: 2.w,),
+                SizedBox(width: 1.w,),
                 Text('Services',
                   style: GoogleFonts.inter(
                       fontWeight: FontWeight.w700,
-                      fontSize: 24.sp,
+                      fontSize: 18.sp,
                       color: primaryColor,
                   ),)
               ],
             ),),
-            SizedBox(height: 12,),
+            SizedBox(height: 2.h,),
+
+
             //Horizontal Scroll Of Services
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -113,16 +125,6 @@ class MainVideoScreen extends StatelessWidget {
                       print("We want Photography Services, get me right");
                     },
                     child: Container(
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.2),
-                            spreadRadius: 5,
-                            blurRadius: 8,
-                            offset: Offset(0, 4), // changes position of shadow
-                          ),
-                        ],
-                      ),
                       child: ClipRRect(
                         borderRadius: BorderRadius.all(Radius.circular(10.0)),
                         child: Container(
@@ -145,21 +147,21 @@ class MainVideoScreen extends StatelessWidget {
                               ),),
                               Padding(padding: EdgeInsets.only(right: 8, bottom: 8), child: Row(mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-                                  Stack(
-                                    alignment: Alignment.center,
-                                    children: [
+                                  GestureDetector(onTap: (){}, child: Stack(
+    alignment: Alignment.center,
+    children: [
 
-                                      ImageIcon(
-                                        AssetImage("assets/imgs/Round ButtonRight.png",),
-                                        color: Colors.white,
-                                        size: 19,
-                                      ),
+    ImageIcon(
+    AssetImage("assets/imgs/Round ButtonRight.png",),
+    color: Colors.white,
+    size: 19,
+    ),
 
-                                      ImageIcon(AssetImage("assets/imgs/Round ButtonShape.png"),
-                                        color: Color.fromARGB(255, 0, 255, 191),),
+    ImageIcon(AssetImage("assets/imgs/Round ButtonShape.png"),
+    color: arrowButton,),
 
-                                    ],
-                                  )
+    ],
+    ), )
 
                                 ],
                               ),
@@ -179,17 +181,6 @@ class MainVideoScreen extends StatelessWidget {
                         print("We want Videography Services, get me right");
                       },
                       child: Container(
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.3),
-                              spreadRadius: 5,
-                              blurRadius: 10,
-                              offset: Offset(4, 4), // changes position of shadow
-                            ),
-                          ],
-                        ),
-
                         child: ClipRRect(
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
 
@@ -239,7 +230,7 @@ class MainVideoScreen extends StatelessWidget {
                                         ),
 
                                         ImageIcon(AssetImage("assets/imgs/Round ButtonShape.png"),
-                                          color: Color.fromARGB(255, 0, 255, 191),),
+                                          color: arrowButton,),
 
                                         // Icon(FontAwesomeIcons.chevronCircleRight,
                                         //   color: Color.fromARGB(255, 0, 255, 191),),
@@ -306,7 +297,7 @@ class MainVideoScreen extends StatelessWidget {
                                             ),
 
                                             ImageIcon(AssetImage("assets/imgs/Round ButtonShape.png"),
-                                              color: Color.fromARGB(255, 0, 255, 191),),
+                                              color: arrowButton,),
 
                                             // Icon(FontAwesomeIcons.chevronCircleRight,
                                             //   color: Color.fromARGB(255, 0, 255, 191),),
@@ -379,7 +370,7 @@ class MainVideoScreen extends StatelessWidget {
                                             ),
 
                                             ImageIcon(AssetImage("assets/imgs/Round ButtonShape.png"),
-                                              color: Color.fromARGB(255, 0, 255, 191),),
+                                              color: arrowButton,),
 
 
                                           ],
@@ -443,7 +434,7 @@ class MainVideoScreen extends StatelessWidget {
                                             ),
 
                                             ImageIcon(AssetImage("assets/imgs/Round ButtonShape.png"),
-                                              color: Color.fromARGB(255, 0, 255, 191),),
+                                              color: arrowButton,),
 
 
                                           ],
@@ -473,17 +464,18 @@ class MainVideoScreen extends StatelessWidget {
 
 
       //Client Portal
-      SizedBox(height: 24,),
+      SizedBox(height: 5.h,),
       Padding(padding: EdgeInsets.symmetric(horizontal: 18),
         child: Column(
           children: [
             //Section Title
             Row(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text('Client',
                   style: GoogleFonts.inter(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 28,
+                      fontWeight: FontWeight.w200,
+                      fontSize: 18.sp,
                     color: Colors.white,
                   ),
                 ),
@@ -491,17 +483,17 @@ class MainVideoScreen extends StatelessWidget {
                 Text('Portal',
                   style: GoogleFonts.inter(
                       fontWeight: FontWeight.w700,
-                      fontSize: 28,
+                      fontSize: 18.sp,
                       color: primaryColor,
                   ),)
               ],
             ),
-            SizedBox(height: 8,),
+            SizedBox(height: 2.h,),
             GestureDetector(child: ClipRRect(
               borderRadius: BorderRadius.all(Radius.circular(10.0)),
 
               child: Container(
-                height: 175,
+                height: fullContainerHeight,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   image: DecorationImage(
@@ -521,55 +513,58 @@ class MainVideoScreen extends StatelessWidget {
       ),
 
       //Lets Chat
-      SizedBox(height: 24,),
-      Padding(padding: EdgeInsets.only(left: 18, right: 18, bottom: 32),
-        child: Column(
-          children: [
-            //Section Title
-            Row(
-              children: [
-                Text("Let's",
-                  style: GoogleFonts.inter(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 28,
-                    color: Colors.white,
-                  ),
-                ),
-                SizedBox(width: 5,),
-                Text('Chat',
-                  style: GoogleFonts.inter(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 28,
-                      color: primaryColor,
-                  ),)
-              ],
-            ),
-            SizedBox(height: 8,),
-            GestureDetector(child: ClipRRect(
-              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-              // child: Image.network("https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?cs=srgb&dl=pexels-pixabay-270408.jpg&fm=jpg",
-              //     fit: BoxFit.cover,
-              //     width: MediaQuery.of(context).size.width / 3
-              // ),
 
-              child: Container(
-                height: 175,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("assets/imgs/Chat.png"),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ),
-              onTap: (){
-                print('Hello Portal');
-              },)
 
-          ],
-        ),
-      ),
+      // SizedBox(height: 24,),
+      // Padding(padding: EdgeInsets.only(left: 18, right: 18, bottom: 32),
+      //   child: Column(
+      //     children: [
+      //       //Section Title
+      //       Row(
+      //         mainAxisAlignment: MainAxisAlignment.end,
+      //         children: [
+      //           Text("Let's",
+      //             style: GoogleFonts.inter(
+      //                 fontWeight: FontWeight.w400,
+      //                 fontSize: 18.sp,
+      //               color: Colors.white,
+      //             ),
+      //           ),
+      //           SizedBox(width: 5,),
+      //           Text('Chat',
+      //             style: GoogleFonts.inter(
+      //                 fontWeight: FontWeight.w700,
+      //                 fontSize: 18.sp,
+      //                 color: primaryColor,
+      //             ),)
+      //         ],
+      //       ),
+      //       SizedBox(height: 2.h,),
+      //       GestureDetector(child: ClipRRect(
+      //         borderRadius: BorderRadius.all(Radius.circular(10.0)),
+      //         // child: Image.network("https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?cs=srgb&dl=pexels-pixabay-270408.jpg&fm=jpg",
+      //         //     fit: BoxFit.cover,
+      //         //     width: MediaQuery.of(context).size.width / 3
+      //         // ),
+      //
+      //         child: Container(
+      //           height: fullContainerHeight,
+      //           width: MediaQuery.of(context).size.width,
+      //           decoration: BoxDecoration(
+      //             image: DecorationImage(
+      //               image: AssetImage("assets/imgs/Chat.png"),
+      //               fit: BoxFit.cover,
+      //             ),
+      //           ),
+      //         ),
+      //       ),
+      //         onTap: (){
+      //           print('Hello Portal');
+      //         },)
+      //
+      //     ],
+      //   ),
+      // ),
 
 
 
@@ -610,16 +605,38 @@ class MainVideoScreen extends StatelessWidget {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Padding(padding: EdgeInsets.only(top: 16, bottom: 4),
+                      Padding(padding: EdgeInsets.only(top: 2.h, bottom: 2.h),
                         child: Image.asset('assets/imgs/logo.png',
-                          width: 120,
+                          width: 25.w,
                         ),
                       ),
-                      Text(''),
 
 
                       Expanded(child: Column(children: customList,
-                      ),)
+                      ),),
+
+
+                      Container(
+                        color: Colors.black.withAlpha(75),
+                        height: 6.h,
+                        child: TextButton(child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Text('Send a message',
+                              style: GoogleFonts.inter(
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w200,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(width: 2.w,),
+                            Padding(padding: EdgeInsets.only(right: 18),
+                              child: Icon(FontAwesomeIcons.commentDots,
+                                color: arrowButton,),)
+                          ],
+
+                        ),)
+                      )
 
                     ],
                   ),

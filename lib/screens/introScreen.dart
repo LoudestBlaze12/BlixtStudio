@@ -235,7 +235,7 @@ class _IntroState extends State<Intro> {
                       TextButton(child: Text("I don't have an account", style: TextStyle(color: Color.fromRGBO(255, 255, 255, .5)), textAlign: TextAlign.left,),),
 
                       GFButton(onPressed: (){
-                        Navigator.pushNamed(context, "/home");
+                        Navigator.pushNamed(context, "/video");
                       },
                           text: "Login",
                           textStyle: TextStyle(
