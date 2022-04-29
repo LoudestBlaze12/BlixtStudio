@@ -16,6 +16,9 @@ import 'package:now_ui_flutter/screens/getStarted.dart';
 import 'package:now_ui_flutter/screens/mainScreen.dart';
 import 'package:now_ui_flutter/screens/mainScreenVideo.dart';
 import 'package:sizer/sizer.dart';
+import 'package:now_ui_flutter/screens/photographyServices.dart';
+import 'package:now_ui_flutter/screens/videographyServices.dart';
+import 'package:now_ui_flutter/screens/ServicePage.dart';
 
 void main() => runApp(MyApp());
 
@@ -33,7 +36,7 @@ class MyApp extends StatelessWidget {
                 '/draft': (BuildContext context) => new DraftHome(),
                 '/settings': (BuildContext context) => new Settings(),
                 "/intro": (BuildContext context) => new Intro(),
-                "/home": (BuildContext context) => new MainScreen(),
+                "/OldHome": (BuildContext context) => new MainScreen(),
                 "/pro": (BuildContext context) => new Pro(),
                 "/profile": (BuildContext context) => new Profile(),
                 "/articles": (BuildContext context) => new Articles(),
@@ -42,7 +45,30 @@ class MyApp extends StatelessWidget {
                 "/ask": (BuildContext context) => new Inquiry(),
                 "/start": (BuildContext context) => new Started(),
                 "/services": (BuildContext context) => new Services(),
-                "/video": (BuildContext context) => new MainVideoScreen(),
+                "/home": (BuildContext context) => new MainVideoScreen(),
+                "/photos": (BuildContext context) => new PhotographyScreen(),
+                "/videos": (BuildContext context) => new VideoraphyScreen(),
+                "/web": (BuildContext context) => new ServiceWidget(serviceName: "Web Design Services", serviceBody: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
+                    'Eget nunc, eu quis nunc non potenti nulla ultricies. '
+                    'At sed tincidunt nullam sed massa consectetur arcu libero.',
+
+                  imageReference: "assets/imgs/Web.png",),
+
+
+                "/market": (BuildContext context) => new ServiceWidget(serviceName: "Marketing Servcies", serviceBody: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
+                    'Eget nunc, eu quis nunc non potenti nulla ultricies. '
+                    'At sed tincidunt nullam sed massa consectetur arcu libero.',
+
+                  imageReference: "assets/imgs/marketing.png",),
+
+
+                "/software": (BuildContext context) => new ServiceWidget(serviceName: "Software Development", serviceBody: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
+                    'Eget nunc, eu quis nunc non potenti nulla ultricies. '
+                    'At sed tincidunt nullam sed massa consectetur arcu libero.',
+                  imageReference: "assets/imgs/Software.png",),
+
+
+
               },
           )
           ;

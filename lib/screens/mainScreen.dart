@@ -366,7 +366,7 @@ class MainScreen extends StatelessWidget {
                                 width: MediaQuery.of(context).size.width / 3,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: AssetImage("assets/imgs/Light.png"),
+                                    image: AssetImage("assets/imgs/marketing.png"),
                                     fit: BoxFit.cover,
                                   ),
                                 ),

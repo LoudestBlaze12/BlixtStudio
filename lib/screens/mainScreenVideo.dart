@@ -122,7 +122,7 @@ class MainVideoScreen extends StatelessWidget {
                   Padding(padding: EdgeInsets.only(left: 36, right: 10),
                   child: GestureDetector(
                     onTap: (){
-                      print("We want Photography Services, get me right");
+                      Navigator.pushNamed(context, "/photos");
                     },
                     child: Container(
                       child: ClipRRect(
@@ -147,21 +147,24 @@ class MainVideoScreen extends StatelessWidget {
                               ),),
                               Padding(padding: EdgeInsets.only(right: 8, bottom: 8), child: Row(mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-                                  GestureDetector(onTap: (){}, child: Stack(
-    alignment: Alignment.center,
-    children: [
+                                  GestureDetector(onTap: (){
+                                    print('Ol happy day when jesus washhhhhhhed');
+                                  },
+                                    child: Stack(
+                                    alignment: Alignment.center,
+                                    children: [
 
-    ImageIcon(
-    AssetImage("assets/imgs/Round ButtonRight.png",),
-    color: Colors.white,
-    size: 19,
-    ),
+                                      ImageIcon(
+                                        AssetImage("assets/imgs/Round ButtonRight.png",),
+                                        color: Colors.white,
+                                        size: 19,
+                                      ),
 
-    ImageIcon(AssetImage("assets/imgs/Round ButtonShape.png"),
-    color: arrowButton,),
+                                      ImageIcon(AssetImage("assets/imgs/Round ButtonShape.png"),
+                                        color: arrowButton,),
 
-    ],
-    ), )
+                                    ],
+                                  ), )
 
                                 ],
                               ),
@@ -179,6 +182,7 @@ class MainVideoScreen extends StatelessWidget {
                     child: GestureDetector(
                       onTap: (){
                         print("We want Videography Services, get me right");
+                        Navigator.pushNamed(context, "/videos");
                       },
                       child: Container(
                         child: ClipRRect(
@@ -253,6 +257,7 @@ class MainVideoScreen extends StatelessWidget {
                   Padding(padding: EdgeInsets.symmetric(horizontal: 10),
                     child: GestureDetector(
                       onTap: (){
+                        Navigator.pushNamed(context, "/web");
                         print("We want Web Design Services, get me right");
                       },
                       child: Stack(
@@ -323,6 +328,7 @@ class MainVideoScreen extends StatelessWidget {
                   Padding(padding: EdgeInsets.symmetric(horizontal: 10),
                     child: GestureDetector(
                       onTap: (){
+                        Navigator.pushNamed(context, "/market");
                         print("We want Marketing Services, get me right");
                       },
                       child: Stack(
@@ -337,7 +343,7 @@ class MainVideoScreen extends StatelessWidget {
                                 width: MediaQuery.of(context).size.width / 3,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: AssetImage("assets/imgs/Light.png"),
+                                    image: AssetImage("assets/imgs/marketing.png"),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -394,6 +400,7 @@ class MainVideoScreen extends StatelessWidget {
                   Padding(padding: EdgeInsets.symmetric(horizontal: 10),
                     child: GestureDetector(
                       onTap: (){
+                        Navigator.pushNamed(context, "/software");
                         print("We want Software Development Services, get me right");
                       },
                       child: Stack(
@@ -512,62 +519,6 @@ class MainVideoScreen extends StatelessWidget {
         ),
       ),
 
-      //Lets Chat
-
-
-      // SizedBox(height: 24,),
-      // Padding(padding: EdgeInsets.only(left: 18, right: 18, bottom: 32),
-      //   child: Column(
-      //     children: [
-      //       //Section Title
-      //       Row(
-      //         mainAxisAlignment: MainAxisAlignment.end,
-      //         children: [
-      //           Text("Let's",
-      //             style: GoogleFonts.inter(
-      //                 fontWeight: FontWeight.w400,
-      //                 fontSize: 18.sp,
-      //               color: Colors.white,
-      //             ),
-      //           ),
-      //           SizedBox(width: 5,),
-      //           Text('Chat',
-      //             style: GoogleFonts.inter(
-      //                 fontWeight: FontWeight.w700,
-      //                 fontSize: 18.sp,
-      //                 color: primaryColor,
-      //             ),)
-      //         ],
-      //       ),
-      //       SizedBox(height: 2.h,),
-      //       GestureDetector(child: ClipRRect(
-      //         borderRadius: BorderRadius.all(Radius.circular(10.0)),
-      //         // child: Image.network("https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?cs=srgb&dl=pexels-pixabay-270408.jpg&fm=jpg",
-      //         //     fit: BoxFit.cover,
-      //         //     width: MediaQuery.of(context).size.width / 3
-      //         // ),
-      //
-      //         child: Container(
-      //           height: fullContainerHeight,
-      //           width: MediaQuery.of(context).size.width,
-      //           decoration: BoxDecoration(
-      //             image: DecorationImage(
-      //               image: AssetImage("assets/imgs/Chat.png"),
-      //               fit: BoxFit.cover,
-      //             ),
-      //           ),
-      //         ),
-      //       ),
-      //         onTap: (){
-      //           print('Hello Portal');
-      //         },)
-      //
-      //     ],
-      //   ),
-      // ),
-
-
-
 
     ];
     //End of Content List
@@ -619,23 +570,31 @@ class MainVideoScreen extends StatelessWidget {
                       Container(
                         color: Colors.black.withAlpha(75),
                         height: 6.h,
-                        child: TextButton(child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Text('Send a message',
-                              style: GoogleFonts.inter(
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w200,
-                                color: Colors.white,
+                        child: Container(child: GestureDetector(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Text('Sign Out',
+                                style: GoogleFonts.inter(
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w200,
+                                  color: Colors.white,
+                                ),
                               ),
-                            ),
-                            SizedBox(width: 2.w,),
-                            Padding(padding: EdgeInsets.only(right: 18),
-                              child: Icon(FontAwesomeIcons.commentDots,
-                                color: arrowButton,),)
-                          ],
+                              SizedBox(width: 2.w,),
+                              Padding(padding: EdgeInsets.only(right: 18),
+                                child: Icon(FontAwesomeIcons.signOutAlt,
+                                  color: arrowButton.withAlpha(200),),
+                              )
+                            ],
 
-                        ),)
+                          ),
+                          onTap: (){
+                            print('Hello darling my old friend');
+                            Navigator.pop(context);
+                          },
+                        )
+                        )
                       )
 
                     ],
